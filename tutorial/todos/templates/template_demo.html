@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Template View{% endblock %}
+
+{% block content %}
+<h1>{{ name }}</h1>
+<h1>{{ age }}</h1>
+<h1>{{ hobbies }}</h1>
+
+<ul>
+    {% for hobby in hobbies %}
+    <li>{{ hobby }}</li>
+    {% endfor %}
+</ul>
+
+{% if hobbies|length > 4 %}
+    <p>{{ name }} has a lot of hobbies</p>
+{% elif 'Reading' in hobbies %}
+    <p>{{ name }} knows reading</p>
+{% else %}
+    <p>{{ name }} has not a lot</p>
+{% endif %}
+
+{% endblock %}
